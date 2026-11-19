@@ -26,7 +26,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="text-gray-500/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32 fixed bottom-0 w-full">
+    <div className="text-gray-500/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32 fixed">
       <div className="flex flex-wrap justify-between gap-12 md:gap-6">
         <div className="max-w-80">
           <img src={assets.logo} alt="logo" className="mb-4 h-8 md:h-9" />
@@ -60,7 +60,7 @@ const Footer = () => {
           <p className="text-lg text-gray-800">Quick Links</p>
           <ul className="mt-3 flex flex-col gap-2 text-sm">
             {quickLinks.map((link, _) => (
-              <li>
+              <li key={link.name}>
                 <a href={link.href}>{link.name}</a>
               </li>
             ))}
