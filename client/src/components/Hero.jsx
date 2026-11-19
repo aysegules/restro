@@ -1,11 +1,52 @@
-import React from 'react'
+import { assets } from "../assets/assets";
+import Animated from "./Animated";
+import StarRating from "./StarRating";
 
 const Hero = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const avatars = [assets.user1, assets.user2, assets.user3, assets.user4];
 
-export default Hero
+  return (
+    <section className="flex flex-col items-center min-h-screen justify-center bg-[url('assets/heroBanner.png')] bg-cover bg-no-repeat px-4 pt-20">
+      <Animated y={-20} delay={0.2}>
+        <p className="text-orange-600">WHERE FLAVOR MEETS ELEGANCE</p>
+      </Animated>
+      <Animated>
+        <h1 className="text-5xl md:text-6xl font-medium max-w-3xl text-center mt-5 font-urbanist text-balance">
+          Crafted for unforgettable dining moments
+        </h1>
+      </Animated>
+
+      <Animated delay={0.2}>
+        <p className="text-zinc-600 max-w-md text-center mt-3">
+          Experience carefully curated menus, fresch local ingredients and
+          impeccable service in a space made for every celebration.
+        </p>
+      </Animated>
+
+      <Animated>
+        <button className=" md:block rounded-full  px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white transition">
+          Book a table
+        </button>
+      </Animated>
+
+      <Animated className="flex items-center justify-center md:justify-start mt-9 ">
+        <div className="flex -space-x-3.5 pr-3">
+          {avatars.map((avatar, i) => (
+            <img
+              key={i}
+              src={avatar}
+              alt="guest"
+              className="size-10 border-2 border-slate-50 rounded-full hover:-translate-y-px transition"
+            />
+          ))}
+        </div>
+        <div>
+          <StarRating />
+          <p className="text-zinc-800">4.8/5 Rating - 10,000 reviews</p>
+        </div>
+      </Animated>
+    </section>
+  );
+};
+
+export default Hero;
