@@ -6,12 +6,13 @@ const Hero = () => {
   const avatars = [assets.user1, assets.user2, assets.user3, assets.user4];
 
   return (
-    <section className="flex flex-col items-center min-h-screen justify-center bg-[url('assets/heroBanner.png')] bg-cover bg-no-repeat px-4 pt-20">
+    <section className="flex flex-col items-center min-h-screen justify-center bg-[url('assets/heroBanner.png')] bg-cover bg-center bg-no-repeat px-4 pt-20">
       <Animated y={-20} delay={0.2}>
         <p className="text-orange-600">WHERE FLAVOR MEETS ELEGANCE</p>
       </Animated>
+
       <Animated>
-        <h1 className="text-5xl md:text-6xl font-medium max-w-3xl text-center mt-5 font-urbanist text-balance">
+        <h1 className="text-5xl md:text-6xl font-lg max-w-3xl text-center mt-5 font-urbanist text-balance">
           Crafted for unforgettable dining moments
         </h1>
       </Animated>
@@ -24,7 +25,7 @@ const Hero = () => {
       </Animated>
 
       <Animated>
-        <button className=" md:block rounded-full  px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white transition">
+        <button className="rounded-full px-6 py-3 mt-8 bg-orange-500 hover:bg-orange-600 text-white font-medium transition">
           Book a table
         </button>
       </Animated>
