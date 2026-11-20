@@ -1,4 +1,3 @@
-import React from "react";
 import { statsData } from "../data/data";
 import Animated from "./Animated";
 
