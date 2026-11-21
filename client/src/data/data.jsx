@@ -304,6 +304,7 @@ export const quickLinks = [
 export const sitemapLinks = [
   { name: "Privacy Policy", href: "#" },
   { name: "Terms of Service", href: "#" },
+  { name: "Sitemap", href: "#" },
 ];
 
 export const navLinks = [
