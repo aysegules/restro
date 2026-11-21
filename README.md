@@ -3,7 +3,7 @@
     <div align="center">
         <img src="https://img.shields.io/badge/-React-FFFFFF?style=for-the-badge&logo=React&logoColor=61DAFB" alt="React" />
         <img src="https://img.shields.io/badge/-Vite-FFFFFF?style=for-the-badge&logo=Vite&logoColor=9135FF" alt="Vite" />
-        <img src="https://img.shields.io/badge/-React Router-FFFFFF?style=for-the-badge&logo=React Router&logoColor=CA4245" alt="React Router" />
+        <img src="https://img.shields.io/badge/-ReactRouter-FFFFFF?style=for-the-badge&logo=React Router&logoColor=CA4245" alt="React Router" />
         <img src="https://img.shields.io/badge/-Lenis-FFFFFF?style=for-the-badge&logo=Npm&logoColor=CB3837" alt="Vite" />
         <img src="https://img.shields.io/badge/-Motion-FFFFFF?style=for-the-badge&logo=Npm&logoColor=CB3837" alt="Motion" />
         <img src="https://img.shields.io/badge/-TailwindCss-FFFFFF?style=for-the-badge&logo=TailwindCss&logoColor=06B6D4" alt="TailwindCss" />
