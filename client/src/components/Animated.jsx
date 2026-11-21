@@ -6,7 +6,7 @@ const Animated = ({
   y = 50,
   x = 0,
   scale = 1,
-  className,
+  className = "",
   ...props
 }) => {
   return (
