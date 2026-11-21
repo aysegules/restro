@@ -6,7 +6,10 @@ const Hero = () => {
   const avatars = [assets.user1, assets.user2, assets.user3, assets.user4];
 
   return (
-    <section className="flex flex-col items-center min-h-screen justify-center bg-[url('assets/heroBanner.png')] bg-cover bg-center bg-no-repeat px-4 pt-20">
+    <section
+      id="hero"
+      className="flex flex-col items-center min-h-screen justify-center bg-[url('assets/heroBanner.png')] bg-cover bg-center bg-no-repeat px-4 pt-20"
+    >
       <Animated y={-20} delay={0.2}>
         <p className="text-orange-600">WHERE FLAVOR MEETS ELEGANCE</p>
       </Animated>
@@ -25,9 +28,12 @@ const Hero = () => {
       </Animated>
 
       <Animated>
-        <button className="rounded-full px-6 py-3 mt-8 bg-orange-500 hover:bg-orange-600 text-white font-medium transition">
+        <a
+          href="#booking-process"
+          className="hidden md:block rounded-full px-6 py-3 mt-7 bg-orange-500 hover:bg-orange-600 text-white transition"
+        >
           Book a table
-        </button>
+        </a>
       </Animated>
 
       <Animated className="flex items-center justify-center md:justify-start mt-9 ">
@@ -42,7 +48,7 @@ const Hero = () => {
           ))}
         </div>
         <div>
-          <StarRating />
+          <StarRating rating={5} />
           <p className="text-zinc-800">4.8/5 Rating - 10,000 reviews</p>
         </div>
       </Animated>
