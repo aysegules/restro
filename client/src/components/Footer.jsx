@@ -1,5 +1,7 @@
 import { assets } from "../assets/assets";
 import { Phone, Mail } from "lucide-react";
+import Animated from "./Animated";
+import { sitemapLinks, socialLinks } from "../data/data";
 
 const Footer = () => {
   const quickLinks = [
@@ -26,113 +28,115 @@ const Footer = () => {
   ];
 
   return (
-    <div className="text-gray-500/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32 fixed">
-      <div className="flex flex-wrap justify-between gap-12 md:gap-6">
-        <div className="max-w-80">
-          <img src={assets.logo} alt="logo" className="mb-4 h-8 md:h-9" />
-          <p className="text-sm">
-            Serving freshly prepared dishes with authentic flavors, premium
-            ingredients and exceptional hospitality every day.
-          </p>
-          <div className="flex items-center gap-3 mt-4">
-            {/* X */}
-            <img
-              className="h-5 rounded-full border border-gray-100"
-              src={assets.x}
-              alt="X logo"
-            />
-            {/* Youtube */}
-            <img
-              className="h-5 rounded-full border border-gray-100"
-              src={assets.youtube}
-              alt="Youtube logo"
-            />
-            {/* Instagram */}
-            <img
-              className="h-5 rounded-full border border-gray-100"
-              src={assets.instagram}
-              alt="Instagram logo"
-            />
+    <footer className="px-auto relative mt-44 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-wrap gap-6 justify-between pb-8">
+          {/**Brand & Socials */}
+          <div className="flex flex-col items-start text-left">
+            <Animated>
+              <img src={assets.logo} alt="Restro logo" />
+            </Animated>
+            <Animated delay={0.2}>
+              <p className="mt-3 text-sm/5.5 text-zinc-600 max-w-81.25">
+                Serving freshly prepared dishes with authentic flavors, premium
+                ingredients and exceptional hospitality every day.
+              </p>
+            </Animated>
+            <div className="flex items-center gap-1.5 mt-6">
+              {socialLinks.map((link, index) => (
+                <Animated key={link.name} delay={index * 0.05}>
+                  <a
+                    href={link.href}
+                    className="size-7.5 rounded-full border border-slate-300 grid place-content-center"
+                  >
+                    {link.icon}
+                  </a>
+                </Animated>
+              ))}
+            </div>
+          </div>
+          {/**Quick Links */}
+          <div>
+            <p className="font-medium mb-5">Quick Links</p>
+            <div className="flex flex-col gap-2.5">
+              {quickLinks.map((link, index) => (
+                <Animated key={index} delay={index * 0.05}>
+                  <a
+                    href={link.href}
+                    className="text-zinc-600 hover:text-zinc-500"
+                  >
+                    {link.name}
+                  </a>
+                </Animated>
+              ))}
+            </div>
+          </div>
+          {/**Get in Touch */}
+          <div>
+            <p className="capitalize font-medium mb-5">Get in touch</p>
+            <div className="space-y-2">
+              <Animated>
+                <a
+                  href="mailto:hello@example.com"
+                  className="flex items-center gap-1 text-zinc-600 hover:text-zinc-500"
+                >
+                  <Mail className="shrink-0 size-4" />
+                  hello@example.com
+                </a>
+              </Animated>
+              <Animated>
+                <a
+                  href="tel:987-654-3210"
+                  className="flex items-center gap-1 text-zinc-600 hover:text-zinc-500"
+                >
+                  <Phone className="shrink-0 size-4" />
+                  987-654-3210
+                </a>
+              </Animated>
+            </div>
+          </div>
+          {/**Sitemap */}
+          <div>
+            <p className="font-medium mb-5">Sitemap</p>
+            <div className="flex flex-col gap-2.5">
+              {sitemapLinks.map((link, index) => (
+                <Animated key={link.name} delay={index * 0.05}>
+                  <a
+                    href={link.href}
+                    className="text-zinc-600 hover:text-zinc-500"
+                  >
+                    {link.name}
+                  </a>
+                </Animated>
+              ))}
+            </div>
           </div>
         </div>
-
-        <div>
-          <p className="text-lg text-gray-800">Quick Links</p>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">
-            {quickLinks.map((link, _) => (
+        <hr className="border-slate-200 mt-8" />
+        <div className="flex flex-col md:flex-row gap-2 items-center justify-between py-5">
+          <p>
+            © {new Date().getFullYear()}{" "}
+            <a href="https://prebuiltui.com">PrebuiltUI</a>. All rights
+            reserved.
+          </p>
+          <ul className="flex items-center gap-4">
+            {sitemapLinks.map((link, _) => (
               <li key={link.name}>
-                <a href={link.href}>{link.name}</a>
+                <a href={link.href} className="capitalize">
+                  {link.name}
+                </a>
               </li>
             ))}
           </ul>
         </div>
-
-        <div>
-          <p className="text-lg text-gray-800">Get In Touch</p>
-          <ul className="mt-3 flex flex-col gap-2 text-sm">
-            <li>
-              <a href="#">
-                <Mail /> hello@example.com
-              </a>
-            </li>
-            <li className="flex flex-col">
-              <a href="#">
-                <Phone /> 987-654-3210
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="max-w-80">
-          <p className="text-lg text-gray-800">STAY UPDATED</p>
-          <p className="mt-3 text-sm">
-            Subscribe to our newsletter for inspiration and special offers.
-          </p>
-          <div className="flex items-center mt-4">
-            <input
-              type="text"
-              className="bg-white rounded-l border border-gray-300 h-9 px-3 outline-none"
-              placeholder="Your email"
-            />
-            <button className="flex items-center justify-center bg-black h-9 w-9 aspect-square rounded-r">
-              {/* Arrow icon */}
-              <svg
-                className="w-4 h-4 text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 12H5m14 0-4 4m4-4-4-4"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
       </div>
-      <hr className="border-gray-300 mt-8" />
-      <div className="flex flex-col md:flex-row gap-2 items-center justify-between py-5">
-        <p>© {new Date().getFullYear()} All rights reserved.</p>
-        <ul className="flex items-center gap-4">
-          <li>
-            <a href="#">Privacy</a>
-          </li>
-          <li>
-            <a href="#">Terms</a>
-          </li>
-          <li>
-            <a href="#">Sitemap</a>
-          </li>
-        </ul>
+
+      <div className="absolute inset-0 text-center select-none -z-1 pointer-events-none">
+        <span className="text-[300px] tracking-wide font-urbanist font-semibold text-zinc-100/70">
+          Restro
+        </span>
       </div>
-    </div>
+    </footer>
   );
 };
 
