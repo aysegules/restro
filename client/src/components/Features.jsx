@@ -4,7 +4,7 @@ import Animated from "./Animated";
 
 const Features = () => {
   return (
-    <section id="features" className="w-full max-w-5xl mt-44">
+    <section id="features" className="px-auto mt-44">
       <div className="text-center mb-16">
         <Animated delay={0.2}>
           <p className="text-orange-500 font-medium mb-3.5 uppercase">
