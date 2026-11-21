@@ -1,4 +1,3 @@
-import { Link, NavLink } from "react-router-dom";
 import { assets } from "../assets/assets.js";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -24,29 +23,29 @@ const Navbar = () => {
         className={`w-full fixed top-0 z-20 px-auto transition-all duration-300 ${scrolled ? "bg-white/70 backdrop-blur-md" : "bg-transparent"} `}
       >
         <div className="flex items-center justify-between font-medium py-4 mx-auto">
-          <Link to="/">
+          <a href="#hero">
             <img src={assets.logo} alt="Restro logo" />
-          </Link>
+          </a>
 
           {/**Desktop Navbar */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link, _) => (
-              <NavLink
+              <a
                 key={link.name}
-                className={({ isActive, isPending }) =>
-                  ` hover:text-zinc-600 ${isActive && ""}`
-                }
-                to={link.href}
+                className="hover:text-zinc-600"
+                href={link.href}
               >
                 {link.name}
-              </NavLink>
+              </a>
             ))}
           </div>
 
-          {/**booking process isimli bölğme gidecek */}
-          <button className="hidden md:block rounded-full px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white transition">
+          <a
+            href="#booking-process"
+            className="hidden md:block rounded-full px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white transition"
+          >
             Book a table
-          </button>
+          </a>
 
           {/**Mobile Navbar */}
           <button onClick={() => setIsMenuOpen(true)} className="md:hidden ">
@@ -58,14 +57,14 @@ const Navbar = () => {
           >
             <div className="flex flex-col items-center space-y-6 font-medium">
               {navLinks.map((link, _) => (
-                <NavLink
+                <a
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   className="text-2xl text-zinc-800 hover:text-orange-600 transition"
                 >
                   {link.name}
-                </NavLink>
+                </a>
               ))}
 
               <button onClick={() => setIsMenuOpen(false)}>
